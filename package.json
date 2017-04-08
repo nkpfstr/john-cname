@@ -1,0 +1,13 @@
+{
+  "name": "john-cname",
+  "version": "0.1.0",
+  "description": "Turn a URL into a CNAME file",
+  "main": "index.js",
+  "repository": "https://github.com/nkpfstr/john-cname.git",
+  "author": "Nick Pfisterer <nick@lunamachine.net>",
+  "license": "MIT",
+  "dependencies": {
+    "fs-extra": "^2.1.2",
+    "lloogg": "^0.1.1"
+  }
+}
