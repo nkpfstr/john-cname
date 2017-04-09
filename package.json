@@ -8,6 +8,9 @@
   "engines": {
     "node": ">=4"
   },
+  "scripts": {
+    "test": "ava"
+  },
   "main": "index.js",
   "keywords": [
     "cname",
@@ -17,5 +20,7 @@
   "dependencies": {
     "fs-extra": "^2.1.2"
   },
+  "devDependencies": {
+    "ava": "^0.19.0"
   }
 }
