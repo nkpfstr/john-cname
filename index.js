@@ -1,23 +1,34 @@
 'use strict'
 
 const fs = require('fs-extra')
-const log = require('lloogg')
+const url = require('url')
 
 module.exports = (domain, path) => {
-  // Require domain and path
-  if (!domain || !path) {
-    log.error(`You must provide a domain and a path`, `Example: cname('http://example.com', 'path/to/cname')`)
+  // Require domain argument
+  if (!domain) {
+    throw new Error('You must provide a domain')
   } else {
-    // Strip protocol from domain if present
-    if (domain.startsWith('http://') || domain.startsWith('https://')) {
-      domain = domain.replace(/^https?:\/\//, '')
+    domain = url.parse(domain)
+
+    if (domain.protocol) {
+      // Remove protocol
+      domain = domain.host
+    } else if (domain.path.endsWith('/')) {
+      // Remove trailing slashes
+      domain = domain.path.replace(/\//g, '')
     }
 
-    // Generate CNAME file
-    return fs.outputFile(`${path}/CNAME`, domain, err => {
-      if (err) {
-        log.error(err)
+    if (path) {
+      if (typeof path === 'string') {
+        // Generate CNAME file
+        fs.outputFile(`${path}/CNAME`, domain, err => {
+          throw new Error(err)
+        })
+      } else {
+        throw new Error(`Expected path to be string, not ${typeof path}`)
       }
-    })
+    } else {
+      return domain
+    }
   }
 }
