@@ -1,13 +1,21 @@
 {
   "name": "john-cname",
-  "version": "0.1.0",
-  "description": "Turn a URL into a CNAME file",
-  "main": "index.js",
-  "repository": "https://github.com/nkpfstr/john-cname.git",
-  "author": "Nick Pfisterer <nick@lunamachine.net>",
+  "version": "0.0.0",
+  "description": "A bad pun that turns domains into CNAME files",
   "license": "MIT",
+  "repository": "nkpfstr/john-cname",
+  "author": "Nick Pfisterer <nick@lunamachine.net>",
+  "engines": {
+    "node": ">=4"
+  },
+  "main": "index.js",
+  "keywords": [
+    "cname",
+    "domain",
+    "url"
+  ],
   "dependencies": {
-    "fs-extra": "^2.1.2",
-    "lloogg": "^0.1.1"
+    "fs-extra": "^2.1.2"
+  },
   }
 }
