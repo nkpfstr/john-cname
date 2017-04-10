@@ -1,6 +1,7 @@
 # john-cname
 > A [bad pun](https://youtu.be/ZJZRsawg6nc) that turns domains into CNAME files
 
+![Build Status](https://travis-ci.org/nkpfstr/john-cname.svg?branch=master)
 
 ## Install
 NPM:
