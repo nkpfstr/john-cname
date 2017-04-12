@@ -28,6 +28,7 @@ cname('http://cname.cool/', 'build')
 
 #### domain
 Type: `string`
+
 Domain the CNAME file should contain. Protocols and trailing slashes are automatically removed.
 ```js
 cname('http://cname.cool/', 'build')
@@ -36,6 +37,7 @@ cname('http://cname.cool/', 'build')
 
 #### path
 Type: `string`
+
 Path to output the CNAME file.
 ```js
 cname('http://cname.cool/', 'build')
